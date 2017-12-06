@@ -81,7 +81,7 @@ class Connection{		// khai báo class với tên Connection
 		this._p2pConnection.on( 'connect', this._onConnect.bind( this ) );
 		this._p2pConnection.on( 'close', this._onClose.bind( this ) );
 		this._p2pConnection.on( 'data', this._onData.bind( this ) );
-		//setTimeout( this._checkConnected.bind( this ), 180000 );
+		setTimeout( this._checkConnected.bind( this ), 180000 );
 	}
 	processSignal( signal ) {
 		this._p2pConnection.signal( signal );
