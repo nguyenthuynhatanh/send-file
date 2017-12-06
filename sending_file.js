@@ -79,7 +79,7 @@ class Connection{		// khai báo class với tên Connection
 		this._p2pConnection.on( 'signal', this._onOutgoingSignal.bind( this ) );
 		this._p2pConnection.on( 'error', this._onError.bind( this ) );
 		this._p2pConnection.on( 'connect', this._onConnect.bind( this ) );
-		this._p2pConnection.on( 'close', this._onClose.bind( this ) );
+		//this._p2pConnection.on( 'close', this._onClose.bind( this ) );
 		this._p2pConnection.on( 'data', this._onData.bind( this ) );
 		setTimeout( this._checkConnected.bind( this ), 180000 );
 	}
@@ -107,11 +107,11 @@ class Connection{		// khai báo class với tên Connection
 		log( 'connected to ' + this._remoteUserName );
 	}
 
-	_onClose() {
-		log( `connection to ${this._remoteUserName} closed` );
-		delete connections[ this._remoteUserName ];
-		users.removeEntry( this._remoteUserName );
-	}
+	//_onClose() {
+	//	log( `connection to ${this._remoteUserName} closed` );
+	//	delete connections[ this._remoteUserName ];
+	//	users.removeEntry( this._remoteUserName );
+	//}
 
 	_checkConnected() {
 		if( !this._isConnected ) {
